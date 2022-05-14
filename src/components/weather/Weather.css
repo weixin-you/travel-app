@@ -1,0 +1,49 @@
+.weather {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem;
+}
+
+.img, .details {
+    width: 32%;
+    border-radius: 10px;
+
+}
+
+h2 {
+    margin: 1rem;
+    font-size: 3rem;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.infordetail {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    line-height: 2rem;
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width:900px) {
+    .weather {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img, .details {
+        width: 75%;
+    }
+
+    .img {
+        margin-top: 2rem;
+    }
+}

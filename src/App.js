@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.css'
+import {useState} from 'react'
+import HeaderAndForm from './components/headerAndForm/HeaderAndForm'
+import Weather from './components/weather/Weather'
 function App() {
+
+  const [weatherData, setWeatherData] = useState([])
+  const [startAndEndDate, setStartAndEndDate] = useState({startDate: "", endDate: ""})
+  const [cityName, setCityName] = useState("")
+  const [imgSrc, setImgSrc] = useState("")
+
+ 
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div>
+      <HeaderAndForm setWeatherData={setWeatherData} startAndEndDate={startAndEndDate} 
+      setStartAndEndDate={setStartAndEndDate} cityName={cityName} setCityName={setCityName}
+      setImgSrc={setImgSrc}
+      />
+      {weatherData.length > 0 && <Weather weatherData={weatherData} cityName={cityName} 
+      startAndEndDate={startAndEndDate} imgSrc={imgSrc}
+      />}
     </div>
+   
   );
 }
 
 export default App;
+
+

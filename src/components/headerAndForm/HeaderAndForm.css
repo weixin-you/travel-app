@@ -1,0 +1,76 @@
+.headerandform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    word-spacing: 2rem;
+    font-family: 'Macondo', cursive;
+}
+
+.form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40vh;
+}
+
+.label-input {
+    width: 100%;
+    margin: auto;
+}
+
+.label {
+    display: inline-block;
+    width: 30%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.input {
+    width: 60%;
+    border-radius: 9px;
+    font-size: 1.5rem;
+}
+
+.button {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 2rem;
+    border-radius: 9px;
+    margin-top: 2rem;
+    font-family: 'Caveat Brush', cursive;
+}
+
+input, button {
+    border: transparent;
+    background-color: white;
+    padding: .5rem;
+}
+input:hover, button:hover {
+    background-color: black;
+    color: white;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .label-input {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .label, .input {
+        width: 80%;
+    }
+
+    .label {
+        text-align: left;
+    }
+}
