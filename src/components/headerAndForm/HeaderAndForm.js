@@ -10,7 +10,7 @@ const HeaderAndForm = ({setStartAndEndDate, setWeatherData, cityName, setCityNam
         }
 
         const weatherBitKey = '7cf6ed38ae2148f1b6c4f7c5f4800e3d'
-        const weatherBitUrl = 'http://api.weatherbit.io/v2.0/forecast/daily'
+        const weatherBitUrl = 'https://api.weatherbit.io/v2.0/forecast/daily'
         let bitURL = `${weatherBitUrl}?city=${cityName}&key=${weatherBitKey}`
 
         const pixKey = '17198963-812b30f1b4baff708364953dc'
