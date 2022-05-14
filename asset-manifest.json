@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/travel-app.github.io/static/css/main.4104b5f8.css",
+    "main.js": "/travel-app.github.io/static/js/main.75987a1f.js",
+    "index.html": "/travel-app.github.io/index.html",
+    "main.4104b5f8.css.map": "/travel-app.github.io/static/css/main.4104b5f8.css.map",
+    "main.75987a1f.js.map": "/travel-app.github.io/static/js/main.75987a1f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4104b5f8.css",
+    "static/js/main.75987a1f.js"
+  ]
+}
