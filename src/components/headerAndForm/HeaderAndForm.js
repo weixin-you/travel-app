@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import "./HeaderAndForm.css"
 
-const HeaderAndForm = ({setStartAndEndDate, setWeatherData, cityName, setCityName, setImgSrc}) => {
+const HeaderAndForm = ({startAndEndDate, setStartAndEndDate, setWeatherData, cityName, setCityName, setImgSrc}) => {
     const getWeatherData = (e) => {
         e.preventDefault()
-        if(cityName==""){
+        if(cityName===""){
             window.alert("The city name field cannot be empty")
             return
         }
@@ -18,6 +18,7 @@ const HeaderAndForm = ({setStartAndEndDate, setWeatherData, cityName, setCityNam
         let pixURL = `${pixBaseUrl}?key=${pixKey}&q=${cityName}`
 
         fetch(bitURL).then(res => res.json()).then(data => {
+            console.log(data);
             setWeatherData(data.data)
         })
 
@@ -27,17 +28,26 @@ const HeaderAndForm = ({setStartAndEndDate, setWeatherData, cityName, setCityNam
         })
   }
   const handleStartDate = (e) => {
-        const date = new Date()
-        const currentDate = date.getYear() + "-" + date.getMonth + "-" + date.getDay
-        if(e.target.value >= currentDate ){
-            setStartAndEndDate(pre => ({...pre, startDate: e.target.value}))
-        }
+
+      const currentDate = new Date().toISOString().replace(/T.*/,'').split('-').join('-')
+      console.log(currentDate);
+      if(e.target.value >= currentDate ){
+        setStartAndEndDate(pre => ({...pre, startDate: e.target.value}))
+      }else {
+        setStartAndEndDate(pre => ({...pre, startDate: currentDate}))
+      }
   }
 
   const handleEndDate = (e) => {
-    const date = new Date()
-    const currentDate = date.getYear() + "-" + date.getMonth + "-" + date.getDay
-    setStartAndEndDate(pre => ({...pre, endDate: e.target.value}))
+      const currentDate = new Date().toISOString().replace(/T.*/,'').split('-').join('-')
+      console.log(currentDate);
+      if(e.target.value >= startAndEndDate.startDate && e.target.value >= currentDate){
+          console.log(e.target.value);
+        setStartAndEndDate(pre => ({...pre, endDate: e.target.value}))
+      }else {
+        setStartAndEndDate(pre => ({...pre, endDate: currentDate}))
+
+      }
   }
   
   return (
@@ -50,7 +60,7 @@ const HeaderAndForm = ({setStartAndEndDate, setWeatherData, cityName, setCityNam
             </div>
             <div className="label-input" > 
                 <label className="label" htmlFor="startdate">Start date:</label>
-                <input className="input"  type="date" id="startdate" onChange={handleStartDate} max="2022-5-14"/>
+                <input className="input"  type="date" id="startdate" onChange={handleStartDate}/>
             </div>
             <div className="label-input">
                 <label className="label" htmlFor="enddate">End date:</label>

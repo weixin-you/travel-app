@@ -8,8 +8,6 @@ function App() {
   const [startAndEndDate, setStartAndEndDate] = useState({startDate: "", endDate: ""})
   const [cityName, setCityName] = useState("")
   const [imgSrc, setImgSrc] = useState("")
-
- 
   
   return (
     
