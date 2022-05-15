@@ -18,7 +18,6 @@ const HeaderAndForm = ({startAndEndDate, setStartAndEndDate, setWeatherData, cit
         let pixURL = `${pixBaseUrl}?key=${pixKey}&q=${cityName}`
 
         fetch(bitURL).then(res => res.json()).then(data => {
-            console.log(data);
             setWeatherData(data.data)
         })
 
@@ -30,7 +29,6 @@ const HeaderAndForm = ({startAndEndDate, setStartAndEndDate, setWeatherData, cit
   const handleStartDate = (e) => {
 
       const currentDate = new Date().toISOString().replace(/T.*/,'').split('-').join('-')
-      console.log(currentDate);
       if(e.target.value >= currentDate ){
         setStartAndEndDate(pre => ({...pre, startDate: e.target.value}))
       }else {
@@ -40,9 +38,7 @@ const HeaderAndForm = ({startAndEndDate, setStartAndEndDate, setWeatherData, cit
 
   const handleEndDate = (e) => {
       const currentDate = new Date().toISOString().replace(/T.*/,'').split('-').join('-')
-      console.log(currentDate);
       if(e.target.value >= startAndEndDate.startDate && e.target.value >= currentDate){
-          console.log(e.target.value);
         setStartAndEndDate(pre => ({...pre, endDate: e.target.value}))
       }else {
         setStartAndEndDate(pre => ({...pre, endDate: currentDate}))
