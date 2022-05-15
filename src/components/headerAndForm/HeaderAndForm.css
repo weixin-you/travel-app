@@ -59,6 +59,10 @@ input:hover, button:hover {
 
 @media only screen and (max-width: 500px) {
 
+    .form {
+        gap: 1rem;
+    }
+
     .label-input {
         display: flex;
         flex-direction: column;
