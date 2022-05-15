@@ -73,4 +73,8 @@ input:hover, button:hover {
     .label {
         text-align: left;
     }
+
+    .title {
+        font-size: 3rem;
+    }
 }

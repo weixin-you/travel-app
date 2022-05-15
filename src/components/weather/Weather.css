@@ -1,7 +1,7 @@
 .weather {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     margin: 2rem;
 }
 
@@ -32,6 +32,29 @@ p {
     font-size: 1.5rem;
 }
 
+.etra {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.etra h2 {
+    word-spacing: 2rem;
+}
+
+.following-days{
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.following-days > p{
+    flex-basis: 30%;
+}
+
+
+
 @media only screen and (max-width:900px) {
     .weather {
         display: flex;
@@ -45,5 +68,17 @@ p {
 
     .img {
         margin-top: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .etra {
+        width: 100%;
     }
 }
