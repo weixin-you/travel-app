@@ -66,8 +66,8 @@ input:hover, button:hover {
         align-items: center;
     }
 
-    .label, .input {
-        width: 80%;
+    .label, .input, .button {
+        width: 100%;
     }
 
     .label {

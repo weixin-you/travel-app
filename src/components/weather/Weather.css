@@ -63,7 +63,7 @@ p {
     }
 
     .img, .details {
-        width: 75%;
+        width: 80%;
     }
 
     .img {
@@ -80,5 +80,17 @@ p {
 
     .etra {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .img, .details {
+        width: 100%;
+    }
+    .etra {
+        width: 100%;
+    }
+    .following-days p {
+        font-size: 1rem;
     }
 }
