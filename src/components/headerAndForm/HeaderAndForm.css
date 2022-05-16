@@ -15,7 +15,6 @@
 .form {
     width: 80%;
     display: flex;
-    display:-webkit-flex;
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
@@ -34,9 +33,6 @@
 }
 
 .input {
-    display:-webkit-flex;
-    flex: 1 0 0;
-    -webkit-flex: 1 0 0;
     width: 60%;
     border-radius: 9px;
     font-size: 1.5rem;
@@ -63,6 +59,10 @@ input:hover, button:hover {
 
 @media only screen and (max-width: 500px) {
 
+    .form {
+        width: 90%;
+    }
+
     .label-input {
         display: flex;
         flex-direction: column;
@@ -70,12 +70,17 @@ input:hover, button:hover {
         align-items: center;
     }
 
-    .label, .input, .button {
-        width: 100%;
+    .date {
+        min-width: 88%;
     }
 
     .label {
+        width: 95%;
         text-align: left;
+    }
+
+    .input, .button {
+        width: 95%;
     }
 
     .title {

@@ -56,11 +56,11 @@ const HeaderAndForm = ({startAndEndDate, setStartAndEndDate, setWeatherData, cit
             </div>
             <div className="label-input" > 
                 <label className="label" htmlFor="startdate">Start date:</label>
-                <input className="input"  type="date" id="startdate" size="100" onChange={handleStartDate}/>
+                <input className="input date"  type="date" id="startdate" size="100" onChange={handleStartDate}/>
             </div>
             <div className="label-input">
                 <label className="label" htmlFor="enddate">End date:</label>
-                <input className="input"  type="date" id="enddate"  onChange={handleEndDate}/>
+                <input className="input date"  type="date" id="enddate"  onChange={handleEndDate}/>
             </div>
            
             <button className="button"  onClick={getWeatherData}>
