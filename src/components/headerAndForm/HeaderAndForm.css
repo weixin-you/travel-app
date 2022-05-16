@@ -15,6 +15,7 @@
 .form {
     width: 80%;
     display: flex;
+    display:-webkit-flex;
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
@@ -33,6 +34,7 @@
 }
 
 .input {
+    display:-webkit-flex;
     width: 60%;
     border-radius: 9px;
     font-size: 1.5rem;
