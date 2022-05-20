@@ -1,13 +1,20 @@
 import './App.css'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import HeaderAndForm from './components/headerAndForm/HeaderAndForm'
 import Weather from './components/weather/Weather'
 function App() {
 
-  const [weatherData, setWeatherData] = useState([])
-  const [startAndEndDate, setStartAndEndDate] = useState({startDate: "", endDate: ""})
-  const [cityName, setCityName] = useState("")
-  const [imgSrc, setImgSrc] = useState("")
+  const [weatherData, setWeatherData] = useState(JSON.parse(localStorage.getItem("weatherData")) || [])
+  const [startAndEndDate, setStartAndEndDate] = useState(JSON.parse(localStorage.getItem("startAndEndDate")) || {startDate: "", endDate: ""})
+  const [cityName, setCityName] = useState(JSON.parse(localStorage.getItem("cityName")) || "")
+  const [imgSrc, setImgSrc] = useState(JSON.parse(localStorage.getItem("imgSrc")) || "")
+
+  useEffect(() => {
+    localStorage.setItem("weatherData", JSON.stringify(weatherData))
+  }, [weatherData])
+    localStorage.setItem("startAndEndDate", JSON.stringify(startAndEndDate))
+    localStorage.setItem("cityName", JSON.stringify(cityName))
+    localStorage.setItem("imgSrc", JSON.stringify(imgSrc))
   
   return (
     
